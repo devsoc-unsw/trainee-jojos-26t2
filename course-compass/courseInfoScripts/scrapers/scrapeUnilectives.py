@@ -70,7 +70,7 @@ if __name__ == "__main__":
         print(f"Course code: {review['course_code']}")
         print(f"Source: {review['source']}")
         print(f"URL: {review['url']}")
-        print(f"Raw text: {review['raw_text'][:100]}...")
+        print(f"Raw text: {review['raw_text']}")
         print(f"Term: {review['term']}")
         print(f"Year: {review['year']}")
         print(f"Ratings: {review['structured_ratings']}")
