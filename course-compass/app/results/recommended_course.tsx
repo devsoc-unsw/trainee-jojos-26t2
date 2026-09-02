@@ -3,9 +3,10 @@
 
 import { useRouter } from "next/navigation";
 
+// app/results/recommended_course.tsx
 interface SourcedTag {
   label: string;
-  source: "reddit" | "unilectives" | "handbook";
+  source: "reddit" | "unilectives" | "handbook" | "studentvip";
   sourceUrl: string;
 }
 

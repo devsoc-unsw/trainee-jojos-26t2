@@ -29,7 +29,100 @@ interface QuizResults {
 }
 
 const QUIZ_ANSWERS_STORAGE_KEY = "quiz_answers";
-const NO_RESULTS_PLACEHOLDER = "No results to show. Please take the quiz first.";
+
+// Dummy data for quiz results
+const DUMMY_RESULTS: QuizResults = {
+  summary:
+    "According to your answers to the quiz, you tend to be more practical in your learning. We recommend a course that focuses heavily on project-based assessments. ",
+
+  topMatch: {
+    code: "COMP2420",
+    name: "Introduction to Data Science",
+    matchScore: 0.94,
+    tags: [
+      {
+        label: "Moderate Workload",
+        source: "unilectives",
+        sourceUrl: "https://unilectives.devsoc.app/course/COMP2420",
+      },
+      {
+        label: "Low Difficulty",
+        source: "studentvip",
+        sourceUrl: "https://studentvip.com.au",
+      },
+      {
+        label: "Project-Heavy",
+        source: "handbook",
+        sourceUrl: "https://www.handbook.unsw.edu.au",
+      },
+    ],
+    shortSummary: "An introductory course to data science.",
+    explanation: [],
+  },
+
+  otherMatches: [
+    {
+      code: "MATH1014",
+      name: "Mathematics for Data Analysis",
+      matchScore: 0.67,
+      tags: [
+        {
+          label: "Math Focus",
+          source: "handbook",
+          sourceUrl: "https://www.handbook.unsw.edu.au",
+        },
+        {
+          label: "Highly Rated",
+          source: "unilectives",
+          sourceUrl: "https://unilectives.devsoc.app/course/MATH1014",
+        },
+      ],
+      shortSummary:
+        "High overlap with logical analysis requirements without complex abstract proofs",
+      explanation: [],
+    },
+    {
+      code: "MATH1014",
+      name: "Mathematics for Data Analysis",
+      matchScore: 0.67,
+      tags: [
+        {
+          label: "Math Focus",
+          source: "handbook",
+          sourceUrl: "https://www.handbook.unsw.edu.au",
+        },
+        {
+          label: "Highly Rated",
+          source: "unilectives",
+          sourceUrl: "https://unilectives.devsoc.app/course/MATH1014",
+        },
+      ],
+      shortSummary:
+        "High overlap with logical analysis requirements without complex abstract proofs",
+      explanation: [],
+    },
+    {
+      code: "MATH1014",
+      name: "Mathematics for Data Analysis",
+      matchScore: 0.67,
+      tags: [
+        {
+          label: "Math Focus",
+          source: "handbook",
+          sourceUrl: "https://www.handbook.unsw.edu.au",
+        },
+        {
+          label: "Highly Rated",
+          source: "unilectives",
+          sourceUrl: "https://unilectives.devsoc.app/course/MATH1014",
+        },
+      ],
+      shortSummary:
+        "High overlap with logical analysis requirements without complex abstract proofs",
+      explanation: [],
+    },
+  ],
+};
 
 export default function Results() {
   const router = useRouter();
@@ -40,6 +133,14 @@ export default function Results() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    // Using dummy data for now — swap back to the real fetch below once
+    // /api/quiz/results is ready.
+    setSummary(DUMMY_RESULTS.summary);
+    setTopMatch(DUMMY_RESULTS.topMatch);
+    setOtherMatches(DUMMY_RESULTS.otherMatches);
+
+    /* ---- REAL FETCH LOGIC — restore this when the API is ready ----
+
     async function fetchResults() {
       try {
         const storedAnswers = sessionStorage.getItem(QUIZ_ANSWERS_STORAGE_KEY);
@@ -72,6 +173,8 @@ export default function Results() {
     }
 
     fetchResults();
+
+    ---- END REAL FETCH LOGIC ---- */
   }, []);
 
   function handleRetakeQuiz() {
@@ -104,7 +207,7 @@ export default function Results() {
                 Why This Was Recommended:
               </span>
               <br />
-              {error || summary || NO_RESULTS_PLACEHOLDER}
+              {error || summary}
             </p>
           </div>
         </div>
