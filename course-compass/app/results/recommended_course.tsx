@@ -3,7 +3,6 @@
 
 import { useRouter } from "next/navigation";
 
-// app/results/recommended_course.tsx
 interface SourcedTag {
   label: string;
   source: "reddit" | "unilectives" | "handbook" | "studentvip";
@@ -67,6 +66,8 @@ export function RecommendedCourse({ course }: RecommendedCourseProps) {
       </div>
 
       <h2 className="mt-2 text-2xl font-bold text-green">{course.name}</h2>
+
+      <p className="mt-1 text-sm text-white/80">{course.shortSummary}</p>
 
       <div className="mt-3 flex flex-wrap gap-2">
         {course.tags.map((tag) => (
