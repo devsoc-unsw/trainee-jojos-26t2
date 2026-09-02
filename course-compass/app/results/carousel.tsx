@@ -1,4 +1,4 @@
-// app/results/other_matches_carousel.tsx
+// app/results/carousel.tsx
 "use client";
 
 import { useRouter } from "next/navigation";
