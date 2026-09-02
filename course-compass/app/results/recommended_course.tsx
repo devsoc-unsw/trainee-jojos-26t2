@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 interface SourcedTag {
   label: string;
-  source: "reddit" | "unilectives" | "handbook" | "studentvip";
+  source: "unilectives" | "handbook" | "studentvip";
   sourceUrl: string;
 }
 
