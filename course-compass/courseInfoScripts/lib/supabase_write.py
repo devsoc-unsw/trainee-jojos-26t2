@@ -107,7 +107,7 @@ def upload_to_supabase(result: dict, name: str):
         "name": name,
         "description": handbook["description"],
         "handbook_url": handbook["url"],
-        "Faculty": handbookMap[course_code[:4]],
+        "faculty": handbookMap[course_code[:4]],
         "overview": ai["overview"],
         "has_limited_data": result["has_limited_data"],
     }).execute()

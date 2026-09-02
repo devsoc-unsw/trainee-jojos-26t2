@@ -42,3 +42,7 @@ next-env.d.ts
 
 **/__pycache__/
 *.pyc
+
+processed_courses.json
+fetch_offset.json
+failed_courses.json

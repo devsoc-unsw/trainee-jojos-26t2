@@ -8,9 +8,12 @@ HEADERS = {"User-Agent": "Mozilla/5.0 (CourseCompass research project)"}
 def get_subject_reviews(course_code: str, uni: str = "unsw"):
     url = f"https://studentvip.com.au/{uni}/subjects/{course_code.lower()}"
     resp = requests.get(url, headers=HEADERS, timeout=15)
+    if resp.status_code == 404:
+            return []  # course has no StudentVIP page — not an error, just no data
+
     resp.raise_for_status()
     resp.encoding = "utf-8"
-
+   
     soup = BeautifulSoup(resp.text, "html.parser")
 
     reviews = []
