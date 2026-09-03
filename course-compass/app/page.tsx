@@ -16,14 +16,16 @@ export default function HomePage() {
         </div>
 
         {/* Get started button redirects to /quiz */}
-        <Link href="/quiz" className="block w-full bg-[#404e7c] hover:bg-[#251F47] text-[#FFFFFF] font-semibold py-4 px-6 rounded-md transition duration-200 text-lg mb-6 shadow-sm text-center">
-          Get Started
+        <Link href="/quiz" className="block w-full bg-[#404e7c] hover:bg-[#251F47] text-[#FFFFFF] font-black py-4 px-6 rounded-2x1 transition duration-150 text-lx mb-4 border-[#1c243a] text-center transform hover:-translate-y-0.5 active:translate-y-0 active:border-b-0">
+          🚀 Get Started
         </Link>
 
         {/* Browse courses dropdown (#44526a) */}
-        <div className="w-full border border-gray-300 rounded-md p-3 text-left bg-[#FFFFFF] text-sm flex justify-between items-center cursor-pointer text-[#44526a]">
-          <span className="font-medium">Browse Courses</span>
-          <span>▼</span>
+        <div className="w-full border-2 border-[#100c29]/20 rounded-2xl p-4 text-left bg-[#FFFFFF] text-sm font-bold flex justify-between items-center cursor-pointer text-[#44526a] hover:border-[#404e7c] transition-colors">
+          <span className="flex items-center gap-2">
+            📖 Browse Available Courses
+          </span>
+          <span className="text-xs">▼</span>
         </div>
       </section>
 
