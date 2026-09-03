@@ -86,90 +86,121 @@ export default function QuizPage() {
   const showFinishInstead = (question?.remainingCount ?? Infinity) < 5;
 
   return (
-    <div>
-      <div className="mt-5 w-auto flex justify-center items-center">
-        <div className="relative bg-[#d9d9d9] px-20 py-12 mr-0 min-h-[120px] min-w-[280px] flex flex-col justify-center">
-          {
-            isDone ? (
-              <div className="mt-4 flex flex-col items-center gap-3">
-                <p>We've narrowed it down. Ready to see your matches?</p>
-                <button
-                  onClick={handleFinish}
-                  className="bg-[var(--primary)] text-[var(--white)] rounded-lg px-4 py-2"
-                >
-                  Finish
-                </button>
-              </div>) :
-              (
-                loading || !question ? (
-                  <div className="space-y-2 animate-pulse">
-                    <div className="h-4 bg-gray-400/40 rounded w-3/2" />
-                    <div className="h-4 bg-gray-400/40 rounded w-3/2" />
-                  </div>
-                ) : (
-                  <>
-                    <h1>{question.questionText}</h1>
-                    {question.subtitle && (
-                      <p className="text-[var(--text-secondary)]">{question.subtitle}</p>
-                    )}
-                  </>
-                ))}
-          {/* Speech bubble point */}
-          <div
-            className="
-              hidden sm:block
-              absolute
-              top-1/2
-              -right-7
-              -translate-y-1/2
-              w-0
-              h-0
-              border-t-[35px]
-              border-t-transparent
-              border-b-[35px]
-              border-b-transparent
-              border-l-[35px]
-              border-l-[#d9d9d9]
-            "
-          />
-        </div>
-
-        <div className="hidden sm:block h-20 w-20">
-          <Image src={owlAsk} alt="Owl" />
-        </div>
-      </div>
-
-      {isDone ? (
-        <div className="mt-4 flex flex-col items-center gap-3">
-        </div>
-      ) : (
-        <>
-          <div className="grid grid-cols-2 gap-3 my-4">
-            {(question?.options ?? []).map((opt) => (
-              <button
-                key={opt.id}
-                onClick={() => toggleOption(opt.id)}
-                disabled={loading}
-                className={`border rounded-lg p-3 disabled:opacity-40 ${selected.includes(opt.id)
-                    ? "bg-[var(--primary)] text-[var(--white)]"
-                    : "bg-[var(--white)] text-[var(--text-primary)]"
-                  }`}
-              >
-                {opt.label}
-              </button>
-            ))}
+    <div className="min-h-screen bg-[#f9fafb] flex flex-col justify-between">
+      <main className="flex-1 max-w-4xl w-full mx-auto px-6 py-12 flex flex-col gap-8 justify-center">
+        
+        {/* [SECTION 1] QUESTION CARD & OWL ASSISTANT */}
+        <div className="w-full flex items-center gap-6">
+          <div className="flex-1 bg-white border border-gray-200 rounded-2xl p-6 shadow-sm relative">
+            {isDone ? (
+              <div>
+                <h1 className="text-xl font-bold text-gray-900">All finished!</h1>
+                <p className="text-gray-500 text-sm mt-1">Ready to review matches?</p>
+              </div>
+            ) : loading || !question ? (
+              <div className="animate-pulse space-y-2">
+                <div className="h-5 bg-gray-200 rounded w-3/4" />
+                <div className="h-4 bg-gray-200 rounded w-1/2" />
+              </div>
+            ) : (
+              <div>
+                <h1 className="text-xl font-extrabold text-gray-900 tracking-tight">
+                  {question.questionText}
+                </h1>
+                {question.subtitle && (
+                  <p className="text-gray-500 text-sm mt-1.5 font-medium">
+                    {question.subtitle}
+                  </p>
+                )}
+              </div>
+            )}
+            
+            {/* Speech Bubble Arrow */}
+            <div className="hidden sm:block absolute right-[-8px] top-1/2 -translate-y-1/2 w-4 h-4 bg-white border-r border-b border-gray-200 rotate-[-45deg]" />
           </div>
+
+          {/* Owl Avatar Container */}
+          <div className="hidden sm:block w-16 h-16 relative bg-white border border-gray-200 rounded-2xl p-2 shadow-sm flex-shrink-0">
+            <Image src={owlAsk} alt="Owl Assistant" className="object-contain" fill />
+          </div>
+        </div>
+
+        {/* [SECTION 2] OPTIONS GRID */}
+        {!isDone && (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-2">
+            {loading || !question
+              ? Array.from({ length: 6 }).map((_, i) => (
+                  <div key={i} className="h-28 bg-gray-200 animate-pulse rounded-xl" />
+                ))
+              : (question.options ?? []).map((opt) => {
+                  const isSelected = selected.includes(opt.id);
+                  return (
+                    <button
+                      key={opt.id}
+                      onClick={() => toggleOption(opt.id)}
+                      disabled={loading}
+                      className={`group text-left border rounded-xl p-5 min-h-[112px] flex flex-col justify-between transition-all duration-200 ${
+                        isSelected
+                          ? "border-indigo-600 bg-indigo-50/40 ring-2 ring-indigo-600/20"
+                          : "border-gray-200 bg-white hover:border-gray-300 hover:shadow-sm"
+                      }`}
+                    >
+                      {/* Top icon and check indicator row */}
+                      <div className="w-full flex justify-between items-center">
+                        <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm ${
+                          isSelected ? "bg-indigo-600 text-white" : "bg-gray-100 text-gray-500 group-hover:bg-gray-200"
+                        }`}>
+                          {/* Placeholder circle icon - replace with real icons as needed */}
+                          <span>⚙</span>
+                        </div>
+                        <div className={`w-5 h-5 rounded-full border flex items-center justify-center text-[10px] ${
+                          isSelected ? "bg-indigo-600 border-indigo-600 text-white" : "border-gray-300 bg-white"
+                        }`}>
+                          {isSelected && "✓"}
+                        </div>
+                      </div>
+                      
+                      {/* Label Text */}
+                      <span className="text-sm font-semibold text-gray-800 mt-4 block">
+                        {opt.label}
+                      </span>
+                    </button>
+                  );
+                })}
+          </div>
+        )}
+
+        {/* [SECTION 3] NEXT / FINISH BUTTON */}
+        <div className="w-full flex justify-between items-center mt-4 border-t border-gray-100 pt-6">
+          {/* Left side: Back Button */}
           <button
-            onClick={showFinishInstead ? handleFinish : handleNext}
-            disabled={selected.length === 0 || loading}
+            type="button"
+            onClick={() => router.back()}
+            className="px-5 py-2.5 text-sm font-semibold text-gray-600 bg-white border border-gray-300 rounded-xl hover:bg-gray-50 transition-colors shadow-sm"
           >
-            <PrimaryButton>
-              {loading ? "Loading..." : showFinishInstead ? "Finish" : "Next Question"}
-            </PrimaryButton>
+            Back
           </button>
 
-        </>
-      )}
+          {/* Right side: Action Button */}
+          {isDone ? (
+            <PrimaryButton onClick={handleFinish}>
+              See Matches
+            </PrimaryButton>
+          ) : (
+            <PrimaryButton
+              onClick={showFinishInstead ? handleFinish : handleNext}
+              disabled={selected.length === 0 || loading}
+            >
+              {loading ? "Loading..." : showFinishInstead ? "Finish" : "Next Question"}
+            </PrimaryButton>
+          )}
+        </div> 
+      </main>
+
+      {/* Basic Footer Placeholder */}
+      <footer className="w-full bg-[#100c29] text-white py-12 text-center text-xl font-medium">
+        Footer
+      </footer>
     </div>
   );
 }
