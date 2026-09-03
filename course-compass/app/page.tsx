@@ -1,17 +1,29 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import React from 'react';
 
 export default function HomePage() {
   return (
     /* Background set to --background (#FAF9F5) and base text to --text-primary (#100c29) */
     <main className="flex flex-col items-center justify-between min-h-screen px-4 py-8 bg-[#FAF9F5] text-[#100c29]">
       
+      {/* Quote / Slogan */}
+      <div className="w-full max-w-2xl text-center mb-4">
+        <span className="inline-block bg-[#57d089]/20 text-[#215738] text-xs sm:text-sm font-black uppercase tracking-widest px-4 py-2 rounded-full border-2 border-[#57d089]/40 shadow-sm animate-bounce">
+          ✨ Adulting is hard. Picking a course shouldn&apos;t be.
+        </span>
+      </div>
+
       {/* 1. HERO SECTION */}
       <section className="w-full max-w-3xl text-center my-8">
-        <div className="bg-gray-200 rounded-lg p-10 mb-8 border border-gray-300">
-          <h1 className="text-3xl font-extrabold tracking-tight md:text-4xl text-[#100c29]">
+        
+        {/* Banner quote */}
+        <div className="bg-white rounded-3xl p-8 sm:p-10 mb-6 border-4 border-[#100c29] shadow-[6px_6px_0_0_#100c29] relative overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-3 bg-gradient-to-r from-[#404e7c] via-[#57d089] to-[#251F47]" />
+          
+          <h1 className="text-3xl font-black tracking-tight md:text-4xl text-[#100c29] leading-tight pt-2">
             Find the right university courses,<br />
-            designed around your goals!
+              designed around your goals!
           </h1>
         </div>
 
