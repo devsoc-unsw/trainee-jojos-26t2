@@ -13,29 +13,29 @@ export interface CandidateQuestion {
 }
 
 export const CATEGORY_TO_FACULTY: Record<string, string[]> = {
-  "science-tech": ["Science", "Computer Science", "Engineering"],
-  "arts-humanities": ["Arts", "Humanities", "Fine Arts"],
-  "business-economics": ["Business", "Economics", "Commerce"],
-  "health-medicine": ["Medicine", "Health"],
-  "engineering": ["Engineering"],
-  "social-sciences": ["Social Science", "Arts & Social Sciences"],
+  "arts-design-architecture": ["Faculty of Arts, Design and Architecture"],
+  "business": ["UNSW Business School"],
+  "engineering": ["Faculty of Engineering"],
+  "law-justice": ["Faculty of Law & Justice"], // confirm exact string in your DB
+  "medicine-health": ["Faculty of Medicine and Health"],
+  "science": ["Faculty of Science"],
 };
 
 export const FIRST_QUESTION: CandidateQuestion = {
   questionId: "q_category",
   questionType: "fixed_category",
-  questionText: "What topics interest you most?",
-  subtitle: "Select all that apply.",
+  questionText: "What faculty interests you most?",
+  subtitle: "Select all that apply. This helps us customize course recommendations to your passion areas.",
   multiSelect: true,
 };
 
 export const FIRST_QUESTION_OPTIONS = [
-  { id: "science-tech", label: "Science & Technology" },
-  { id: "arts-humanities", label: "Arts & Humanities" },
-  { id: "business-economics", label: "Business & Economics" },
-  { id: "health-medicine", label: "Health & Medicine" },
+  { id: "arts-design-architecture", label: "Arts, Design & Architecture" },
+  { id: "business", label: "Business" },
   { id: "engineering", label: "Engineering" },
-  { id: "social-sciences", label: "Social Sciences" },
+  { id: "law-justice", label: "Law & Justice" },
+  { id: "medicine-health", label: "Medicine & Health" },
+  { id: "science", label: "Science" },
 ];
 
 // The pool of adaptive questions the engine picks from after the first question.
