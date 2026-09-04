@@ -5,7 +5,7 @@ import { useRouter, useParams } from "next/navigation";
 
 interface SourcedTag {
   label: string;
-  source: "unilectives" | "reddit" | "handbook";
+  source: "unilectives" | "studentvip" | "handbook";
   sourceUrl: string;
 }
 
@@ -32,7 +32,7 @@ interface CourseDetail {
 interface Review {
   reviewId: string;
   quote: string;
-  source: "reddit" | "unilectives";
+  source: "studentvip" | "unilectives";
   url: string;
   date: string | null
   relatedTags: SourcedTag[];
@@ -190,7 +190,7 @@ export default function Course() {
                   &ldquo;{review.quote}&rdquo;
                 </p>
                 <span className="text-lg" title={review.source}>
-                  {review.source === "reddit" ? "🔶" : "📘"}
+                  {review.source === "studentvip" ? "🔶" : "📘"}
                 </span>
               </div>
             ))}
