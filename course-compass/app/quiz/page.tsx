@@ -163,9 +163,9 @@ export default function QuizPage() {
             onClick={showFinishInstead ? handleFinish : handleNext}
             disabled={selected.length === 0 || loading}
           >
-            <PrimaryButton>
+            {/* <PrimaryButton> */}
               {loading ? "Loading..." : showFinishInstead ? "Finish" : "Next Question"}
-            </PrimaryButton>
+            {/* </PrimaryButton> */}
           </button>
 
         </>

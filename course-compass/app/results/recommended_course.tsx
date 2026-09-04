@@ -1,4 +1,3 @@
-// app/results/recommended_course.tsx
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -27,10 +26,32 @@ export interface RecommendedCourseData {
 
 interface RecommendedCourseProps {
   course: RecommendedCourseData | null;
+  loading?: boolean;
 }
 
-export function RecommendedCourse({ course }: RecommendedCourseProps) {
+export function RecommendedCourse({ course, loading }: RecommendedCourseProps) {
   const router = useRouter();
+
+  if (loading) {
+    return (
+      <section className="rounded-xl bg-secondary p-6">
+        <div className="flex items-center gap-2">
+          <span className="rounded bg-white/10 px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+            Top Match
+          </span>
+        </div>
+        <div className="mt-3 space-y-2 animate-pulse">
+          <div className="h-6 w-2/3 rounded bg-white/20" />
+          <div className="h-4 w-full rounded bg-white/10" />
+          <div className="mt-3 flex gap-2">
+            <div className="h-6 w-20 rounded-full bg-white/10" />
+            <div className="h-6 w-24 rounded-full bg-white/10" />
+            <div className="h-6 w-16 rounded-full bg-white/10" />
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   if (!course) {
     return (
@@ -60,13 +81,10 @@ export function RecommendedCourse({ course }: RecommendedCourseProps) {
         <span className="rounded bg-white/10 px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white">
           Top Match
         </span>
-        <span className="text-sm font-medium text-white/80">
-          {course.code}
-        </span>
+        <span className="text-sm font-medium text-white/80">{course.code}</span>
       </div>
 
       <h2 className="mt-2 text-2xl font-bold text-green">{course.name}</h2>
-
       <p className="mt-1 text-sm text-white/80">{course.shortSummary}</p>
 
       <div className="mt-3 flex flex-wrap gap-2">
