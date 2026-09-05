@@ -6,7 +6,7 @@ export function PrimaryButton({ children }: { children: ReactNode }) {
       className="
         bg-[var(--primary)]
         font-bold
-        rounded-2xl
+        rounded-lg
         px-4
         py-2
         text-[var(--white)]

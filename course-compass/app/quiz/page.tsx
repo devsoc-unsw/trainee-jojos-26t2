@@ -229,18 +229,19 @@ export default function QuizPage() {
       ) : (
         <>
           {/* Options card */}
-          <div className="mt-12 w-full rounded-2xl bg-white p-8 shadow-sm">
+          <div className="mt-12 w-full rounded-xl bg-white p-5 shadow-sm">
             <div className="mx-auto flex max-w-[640px] flex-wrap justify-center gap-5">
               {(question?.options ?? []).map((opt) => {
                 const isSelected = selected.includes(opt.id);
                 const icon = showIcons ? OPTION_ICONS[opt.id] : undefined;
-
+                console.log(question?.questionType)
                 return (
                   <button
                     key={opt.id}
                     onClick={() => toggleOption(opt.id)}
                     disabled={loading}
-                    className={`relative flex w-[192px] flex-col items-start justify-start rounded-xl border p-5 text-left transition disabled:opacity-40 ${
+                    className={(question?.questionType != "fixed_category" ? "w-[47%] ": "w-[192px] ") 
+                      + `relative flex flex-col items-start justify-start rounded-lg border p-5 text-left transition disabled:opacity-40 ${
                       isSelected
                         ? "border-primary bg-[#eef1f8]"
                         : "border-gray-200 bg-white hover:border-primary/40"
