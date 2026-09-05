@@ -120,28 +120,28 @@ export default function QuizPage() {
   const canGoBack = quizStorage.get().length > 0 && !loading;
 
   return (
-    <div className="mx-auto flex max-w-3xl flex-col items-center px-6 py-10">
+    <div className="mx-auto flex max-w-3xl flex-col items-center px-6 py-16">
       {/* Speech bubble + owl */}
-      <div className="flex w-full items-center justify-center gap-6">
-        <div className="relative min-h-[120px] w-full max-w-[420px] rounded-2xl bg-[#d9d9d9] px-8 py-6">
+      <div className="flex w-full items-center justify-center gap-8 py-6">
+        <div className="relative min-h-[150px] w-full max-w-[500px] rounded-2xl bg-[#d9d9d9] px-10 py-8">
           {isDone ? (
             <div className="flex flex-col items-center gap-3 text-center">
-              <p className="font-medium text-text-primary">
+              <p className="text-lg font-medium text-text-primary">
                 We&apos;ve narrowed it down. Ready to see your matches?
               </p>
             </div>
           ) : loading || !question ? (
             <div className="animate-pulse space-y-2">
-              <div className="h-4 w-3/4 rounded bg-gray-400/40" />
-              <div className="h-4 w-1/2 rounded bg-gray-400/40" />
+              <div className="h-5 w-3/4 rounded bg-gray-400/40" />
+              <div className="h-5 w-1/2 rounded bg-gray-400/40" />
             </div>
           ) : (
             <>
-              <h1 className="text-xl font-bold text-text-primary">
+              <h1 className="text-2xl font-bold text-text-primary">
                 {question.questionText}
               </h1>
               {question.subtitle && (
-                <p className="mt-1 text-sm text-text-secondary">
+                <p className="mt-2 text-base text-text-secondary">
                   {question.subtitle}
                 </p>
               )}
@@ -154,21 +154,21 @@ export default function QuizPage() {
               hidden sm:block
               absolute
               top-1/2
-              -right-7
+              -right-8
               -translate-y-1/2
               w-0
               h-0
-              border-t-[35px]
+              border-t-[40px]
               border-t-transparent
-              border-b-[35px]
+              border-b-[40px]
               border-b-transparent
-              border-l-[35px]
+              border-l-[40px]
               border-l-[#d9d9d9]
             "
           />
         </div>
 
-        <div className="hidden h-24 w-24 flex-shrink-0 sm:block">
+        <div className="hidden h-28 w-28 flex-shrink-0 sm:block">
           <Image
             src={owlAsk}
             alt="Owl"
@@ -178,7 +178,7 @@ export default function QuizPage() {
       </div>
 
       {isDone ? (
-        <div className="mt-8">
+        <div className="mt-12">
           <div
             role="button"
             tabIndex={0}
@@ -193,8 +193,8 @@ export default function QuizPage() {
       ) : (
         <>
           {/* Options card */}
-          <div className="mt-8 w-full rounded-2xl bg-white p-6 shadow-sm">
-            <div className="mx-auto grid max-w-lg grid-cols-2 gap-4 sm:grid-cols-3">
+          <div className="mt-12 w-full rounded-2xl bg-white p-8 shadow-sm">
+            <div className="mx-auto flex max-w-[620px] flex-wrap justify-center gap-5">
               {(question?.options ?? []).map((opt) => {
                 const isSelected = selected.includes(opt.id);
                 return (
@@ -202,13 +202,13 @@ export default function QuizPage() {
                     key={opt.id}
                     onClick={() => toggleOption(opt.id)}
                     disabled={loading}
-                    className={`rounded-xl border p-4 text-left transition disabled:opacity-40 ${
+                    className={`w-[192px] rounded-xl border p-5 text-left transition disabled:opacity-40 ${
                       isSelected
                         ? "border-primary bg-primary/5"
                         : "border-gray-200 bg-white hover:border-primary/40"
                     }`}
                   >
-                    <span className="text-sm font-semibold text-text-primary">
+                    <span className="text-base font-semibold text-text-primary">
                       {opt.label}
                     </span>
                   </button>
@@ -218,7 +218,7 @@ export default function QuizPage() {
           </div>
 
           {/* Back / Next row */}
-          <div className="mt-6 flex w-full items-center justify-between">
+          <div className="mt-12 flex w-full items-center justify-between py-4">
             {canGoBack ? (
               <div
                 role="button"

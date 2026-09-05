@@ -173,18 +173,18 @@ function QuizPage() {
     const showFinishInstead = (question?.remainingCount ?? Infinity) < 5;
     const canGoBack = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$quizStorage$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["quizStorage"].get().length > 0 && !loading;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "mx-auto flex max-w-3xl flex-col items-center px-6 py-10",
+        className: "mx-auto flex max-w-3xl flex-col items-center px-6 py-16",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex w-full items-center justify-center gap-6",
+                className: "flex w-full items-center justify-center gap-8 py-6",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "relative min-h-[120px] w-full max-w-[420px] rounded-2xl bg-[#d9d9d9] px-8 py-6",
+                        className: "relative min-h-[150px] w-full max-w-[500px] rounded-2xl bg-[#d9d9d9] px-10 py-8",
                         children: [
                             isDone ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "flex flex-col items-center gap-3 text-center",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                    className: "font-medium text-text-primary",
+                                    className: "text-lg font-medium text-text-primary",
                                     children: "We've narrowed it down. Ready to see your matches?"
                                 }, void 0, false, {
                                     fileName: "[project]/app/quiz/page.tsx",
@@ -199,14 +199,14 @@ function QuizPage() {
                                 className: "animate-pulse space-y-2",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "h-4 w-3/4 rounded bg-gray-400/40"
+                                        className: "h-5 w-3/4 rounded bg-gray-400/40"
                                     }, void 0, false, {
                                         fileName: "[project]/app/quiz/page.tsx",
                                         lineNumber: 135,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "h-4 w-1/2 rounded bg-gray-400/40"
+                                        className: "h-5 w-1/2 rounded bg-gray-400/40"
                                     }, void 0, false, {
                                         fileName: "[project]/app/quiz/page.tsx",
                                         lineNumber: 136,
@@ -220,7 +220,7 @@ function QuizPage() {
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                        className: "text-xl font-bold text-text-primary",
+                                        className: "text-2xl font-bold text-text-primary",
                                         children: question.questionText
                                     }, void 0, false, {
                                         fileName: "[project]/app/quiz/page.tsx",
@@ -228,7 +228,7 @@ function QuizPage() {
                                         columnNumber: 15
                                     }, this),
                                     question.subtitle && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "mt-1 text-sm text-text-secondary",
+                                        className: "mt-2 text-base text-text-secondary",
                                         children: question.subtitle
                                     }, void 0, false, {
                                         fileName: "[project]/app/quiz/page.tsx",
@@ -242,7 +242,7 @@ function QuizPage() {
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "\n              hidden sm:block\n              absolute\n              top-1/2\n              -right-7\n              -translate-y-1/2\n              w-0\n              h-0\n              border-t-[35px]\n              border-t-transparent\n              border-b-[35px]\n              border-b-transparent\n              border-l-[35px]\n              border-l-[#d9d9d9]\n            "
+                                className: "\n              hidden sm:block\n              absolute\n              top-1/2\n              -right-8\n              -translate-y-1/2\n              w-0\n              h-0\n              border-t-[40px]\n              border-t-transparent\n              border-b-[40px]\n              border-b-transparent\n              border-l-[40px]\n              border-l-[#d9d9d9]\n            "
                             }, void 0, false, {
                                 fileName: "[project]/app/quiz/page.tsx",
                                 lineNumber: 152,
@@ -255,7 +255,7 @@ function QuizPage() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "hidden h-24 w-24 flex-shrink-0 sm:block",
+                        className: "hidden h-28 w-28 flex-shrink-0 sm:block",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                             src: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$owls$2f$owl$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$owls$2f$owl$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
                             alt: "Owl",
@@ -277,7 +277,7 @@ function QuizPage() {
                 columnNumber: 7
             }, this),
             isDone ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "mt-8",
+                className: "mt-12",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     role: "button",
                     tabIndex: 0,
@@ -304,17 +304,17 @@ function QuizPage() {
             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mt-8 w-full rounded-2xl bg-white p-6 shadow-sm",
+                        className: "mt-12 w-full rounded-2xl bg-white p-8 shadow-sm",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "mx-auto grid max-w-lg grid-cols-2 gap-4 sm:grid-cols-3",
+                            className: "mx-auto flex max-w-[620px] flex-wrap justify-center gap-5",
                             children: (question?.options ?? []).map((opt)=>{
                                 const isSelected = selected.includes(opt.id);
                                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     onClick: ()=>toggleOption(opt.id),
                                     disabled: loading,
-                                    className: `rounded-xl border p-4 text-left transition disabled:opacity-40 ${isSelected ? "border-primary bg-primary/5" : "border-gray-200 bg-white hover:border-primary/40"}`,
+                                    className: `w-[192px] rounded-xl border p-5 text-left transition disabled:opacity-40 ${isSelected ? "border-primary bg-primary/5" : "border-gray-200 bg-white hover:border-primary/40"}`,
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-sm font-semibold text-text-primary",
+                                        className: "text-base font-semibold text-text-primary",
                                         children: opt.label
                                     }, void 0, false, {
                                         fileName: "[project]/app/quiz/page.tsx",
@@ -338,7 +338,7 @@ function QuizPage() {
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mt-6 flex w-full items-center justify-between",
+                        className: "mt-12 flex w-full items-center justify-between py-4",
                         children: [
                             canGoBack ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 role: "button",
