@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 interface SourcedTag {
@@ -72,39 +73,39 @@ export function RecommendedCourse({
     );
   }
 
-return (
-  <div
-    className="
+  return (
+    <div
+      className="
       w-full
       rounded-xl
       bg-secondary
       p-6
       text-left
     "
-  >
-    <div className="flex items-center gap-2">
-      <span className="rounded bg-white/10 px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white">
-        Top Match
-      </span>
+    >
+      <div className="flex items-center gap-2">
+        <span className="rounded bg-white/10 px-2 py-1 text-xs font-semibold uppercase tracking-wide text-white">
+          Top Match
+        </span>
 
-      <span className="text-sm font-medium text-white/80">
-        {course.code}
-      </span>
-    </div>
+        <span className="text-sm font-medium text-white/80">
+          {course.code}
+        </span>
+      </div>
 
-    <h2 className="mt-2 text-2xl font-bold text-green">
-      {course.name}
-    </h2>
+      <h2 className="mt-2 text-2xl font-bold text-green">
+        {course.name}
+      </h2>
 
-    <p className="mt-1 text-sm text-white/80">
-      {course.shortSummary}
-    </p>
+      <p className="mt-1 text-sm text-white/80">
+        {course.shortSummary}
+      </p>
 
-    <div className="mt-3 flex flex-wrap gap-2">
-      {course.tags.map((tag) => (
-        <span
-          key={tag.label}
-          className="
+      <div className="mt-3 flex flex-wrap gap-2">
+        {course.tags.map((tag) => (
+          <span
+            key={tag.label}
+            className="
             rounded-full
             bg-white
             px-3
@@ -113,31 +114,29 @@ return (
             font-medium
             text-text-primary
           "
-        >
-          {tag.label}
-        </span>
-      ))}
+          >
+            {tag.label}
+          </span>
+        ))}
+      </div>
+      <Link
+        href={`/courses/${encodeURIComponent(course.code)}`}
+        className="
+            mt-3
+            inline-flex
+            items-center
+            gap-2
+            text-[13px]
+            font-semibold
+            text-[#404e7c]
+            text-[var(--white)]
+            hover:text-[var(--green)]
+            transition-colors
+          "
+      >
+        View course
+        <ArrowRight size={15} />
+      </Link>
     </div>
-
-    <Link
-      href={`/courses/${encodeURIComponent(course.code)}`}
-      className="
-        mt-5
-        inline-flex
-        items-center
-        rounded-lg
-        bg-white
-        px-3
-        py-1
-        text-sm
-        font-semibold
-        text-secondary
-        transition
-        hover:bg-white/90
-      "
-    >
-      View course
-    </Link>
-  </div>
-);
+  );
 }

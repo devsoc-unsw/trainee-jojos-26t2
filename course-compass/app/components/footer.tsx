@@ -1,28 +1,28 @@
-import Image from "next/image";
-import icon from "@/public/owls/owl_icon.svg";
+"use client";
+
+import { BouncyLogo } from "./BouncyLogo";
 
 export function Footer() {
   return (
-    <footer className="w-full h-30 bg-[var(--primary)]"> 
-      <div className="w-full">
-        <div className="h-3 bg-[var(--green)]"></div>
+    <footer className="relative h-80 w-full overflow-hidden bg-[var(--primary)]">
+      {/* Green top border */}
+      <div className="absolute left-0 top-0 z-10 h-3 w-full bg-[var(--green)]" />
 
-        <div className="flex items-center justify-between px-6 py-6">
-          <span className="flex items-center">
-            <Image
-              src={icon}
-              alt="Course Compass icon"
-              width={40}
-              height={40}
-              className="w-10 h-10"
-            />
-            <span className="text-[var(--green)]">Course Compass</span>
+      {/* Footer content */}
+      <div className="relative z-20 flex h-full items-start justify-between px-6 py-6">
+        <span className="flex items-center gap-2">
+          <span className="text-[var(--green)]">
+            Course Compass
           </span>
-          <span className="text-[var(--white)]">
-            &copy; {new Date().getFullYear()} Course Compass
-          </span>
-        </div>
+        </span>
+
+        <span className="text-[var(--white)]">
+          &copy; {new Date().getFullYear()} Course Compass
+        </span>
       </div>
+
+      {/* Bouncy logo has the entire footer as its playground */}
+      <BouncyLogo />
     </footer>
   );
 }

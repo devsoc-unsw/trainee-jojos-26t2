@@ -24,7 +24,7 @@ export function CourseCard({
         p-6
         flex flex-col
         transition-all duration-200
-        hover:border-[#2d2d44]
+        hover:border-[var(--green)]
         hover:shadow-md
         aspect-[1.5/1]
         w-full
@@ -72,7 +72,7 @@ export function CourseCard({
             text-[13px]
             font-semibold
             text-[#404e7c]
-            hover:text-[#251F47]
+            hover:text-[var(--green)]
             transition-colors
           "
         >

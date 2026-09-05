@@ -95,7 +95,7 @@ export default function Filters({
   }, [tagSearch, selectedTags]);
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-8 bg-white p-4 rounded-2xl">
       {/* Faculty */}
       <section>
         <h2 className="mb-3 text-sm font-semibold text-[#100c29]">
@@ -124,6 +124,13 @@ export default function Filters({
           ))}
         </div>
       </section>
+      <div
+        style={{
+          height: '2px',
+          background: 'linear-gradient(to right, transparent, var(--green), transparent)',
+          margin: '2rem 0',
+        }}
+      />
 
       {/* Tags */}
       <section>
@@ -175,7 +182,13 @@ export default function Filters({
           )}
         </div>
       </section>
-
+      <div
+        style={{
+          height: '2px',
+          background: 'linear-gradient(to right, transparent, var(--green), transparent)',
+          margin: '2rem 0',
+        }}
+      />
       {/* Ratings */}
       <section>
         <h2 className="mb-4 text-sm font-semibold text-[#100c29]">
