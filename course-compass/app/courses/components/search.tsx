@@ -9,7 +9,8 @@ interface SearchProps {
 
 export default function Search({ value, onChange }: SearchProps) {
   return (
-    <div className="flex items-center bg-white border-[1.5px] border-[#f0e6dd] rounded-[12px] py-[10px] px-[18px] w-full transition-colors duration-200 ease-in-out focus-within:border-[#d8c8ba]">
+    <div className="flex items-center bg-white border-[1.5px] border-[#f0e6dd] rounded-[12px] py-[10px] px-[18px] w-full transition-colors duration-200 ease-in-out focus-within:border-[var(--green)]">
+      
       <svg
         className="w-[20px] h-[20px] text-[#718096] mr-[12px] shrink-0"
         fill="none"

@@ -51,7 +51,13 @@ export default function About() {
         </div>
       </div>
       <div>
-        <MeetTheTeam />
+           <div
+    style={{
+      height: '2px',
+      background: 'linear-gradient(to right, transparent, var(--green), transparent)',
+      margin: '2rem 0',
+    }}
+  />       <MeetTheTeam />
       </div>
     </main>
   );

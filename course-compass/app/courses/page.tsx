@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import Search from "./components/search";
 import Filters from "./components/filters";
 import { CourseCard } from "../components/courseCard";
+import Image from "next/image";
+import owl from "@/public/owls/owl_search.svg"
 
 const FACULTIES = [
   {
@@ -232,14 +234,8 @@ export default function CoursesPage() {
     <main className="min-h-screen bg-[#FAF9F5]">
       <div className="mx-auto max-w-7xl px-6 py-10">
 
-        <div className="mb-8">
-          <h1>Browse Courses</h1>
-          <p>
-            Find courses that match your preferences.
-          </p>
-        </div>
-
-        <div className="mb-8">
+        <div className="mb-8 flex">
+          <Image className="*:w-100" src={owl} alt={""}></Image>
           <Search
             value={search}
             onChange={setSearch}

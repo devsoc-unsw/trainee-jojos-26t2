@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
+import { ArrowRight } from "lucide-react";
 
 interface SourcedTag {
   label: string;
@@ -56,6 +57,8 @@ export default function Course() {
   const [courseError, setCourseError] = useState<string | null>(null);
   const [reviewsError, setReviewsError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
+  const year = new Date().getFullYear();
+  const handbookUrl = `https://www.handbook.unsw.edu.au/undergraduate/courses/${year}/${course?.code}`;
 
   useEffect(() => {
     async function fetchCourse() {
@@ -114,7 +117,7 @@ export default function Course() {
     <main className="px-6 py-6 sm:px-10 lg:px-16">
       {/* Header */}
       <div className="flex flex-wrap items-center gap-2 text-xs font-medium text-text-secondary">
-        <span>{course?.code || code}</span>
+        <span >{course?.code || code}</span>
 
         {course?.faculty && (
           <>
@@ -131,9 +134,37 @@ export default function Course() {
         )}
       </div>
 
-      <h1 className="mt-1 text-3xl font-bold text-text-primary">
-        {course?.name || courseError || "Course not found"}
-      </h1>
+      <div className="mt-1 flex flex-wrap items-start justify-between gap-3">
+        <h1 className="text-3xl font-bold text-text-primary">
+          {course?.name || courseError || "Course not found"}
+        </h1>
+{/* 
+          <a    
+            href={handbookUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 rounded-lg bg-[var(--primary)] px-4 py-2 text-sm font-semibold text-[var(--white)] hover:brightness-110"
+          >
+            View on Handbook */}
+          {/* </a> */}
+
+        <a
+          href={handbookUrl}
+          className="
+            inline-flex
+            items-center
+            gap-2
+            text-[13px]
+            font-semibold
+            text-[#404e7c]
+            hover:text-[var(--green)]
+            transition-colors
+          "
+        >
+          Open Handbook
+          <ArrowRight size={15} />
+        </a>
+      </div>
 
       {course?.shortSummary && (
         <p className="mt-2 text-text-primary">{course.shortSummary}</p>
@@ -142,15 +173,30 @@ export default function Course() {
       <div className="mt-3 flex flex-wrap gap-2">
         {course?.tags && course.tags.length > 0 ? (
           course.tags.map((tag) => (
-            <a
+            <span
               key={tag.label}
-              href={tag.sourceUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-orange-100 px-3 py-1 text-xs font-medium text-text-primary hover:brightness-95"
+              className="
+
+                bg-[#f8fafc]
+
+                text-[#64748b]
+
+                text-[11px]
+
+                py-1
+
+                px-3
+
+                rounded-md
+
+                border border-[#e2e8f0]
+
+                font-medium
+
+              "
             >
               {tag.label}
-            </a>
+            </span>
           ))
         ) : (
           <span className="text-xs text-text-secondary">
@@ -228,7 +274,6 @@ export default function Course() {
       </section>
 
       {/* Student Reviews */}
-      {/* Student Reviews */}
       <section className="mt-6">
         <h2 className="text-lg font-bold text-text-primary">
           Student Reviews
@@ -250,6 +295,71 @@ export default function Course() {
   );
 }
 
+function StarRating({ value }: { value: number | null }) {
+  if (value === null) {
+    return (
+      <span className="text-sm font-semibold text-text-secondary">
+        N/A
+      </span>
+    );
+  }
+
+  // Convert the rating from /10 to /5.
+  // Round to the nearest 0.5.
+  const starsOutOfFive = Math.round((value / 2) * 2) / 2;
+
+  return (
+    <div
+      className="flex items-center gap-0.5"
+      title={`${value.toFixed(1)} / 10`}
+      aria-label={`${starsOutOfFive} out of 5 stars`}
+    >
+      {Array.from({ length: 5 }).map((_, i) => {
+        const starValue = i + 1;
+
+        if (starsOutOfFive >= starValue) {
+          // Full star
+          return (
+            <span
+              key={i}
+              className="text-lg leading-none text-[var(--primary)]"
+            >
+              ★
+            </span>
+          );
+        }
+
+        if (starsOutOfFive === starValue - 0.5) {
+          // Half star
+          return (
+            <span
+              key={i}
+              className="relative text-lg leading-none text-gray-300"
+            >
+              <span
+                className="absolute left-0 top-0 overflow-hidden text-[var(--primary)]"
+                style={{ width: "50%" }}
+              >
+                ★
+              </span>
+              <span>★</span>
+            </span>
+          );
+        }
+
+        // Empty star
+        return (
+          <span
+            key={i}
+            className="text-lg leading-none text-gray-300"
+          >
+            ★
+          </span>
+        );
+      })}
+    </div>
+  );
+}
 function RatingRow({
   label,
   value,
@@ -260,14 +370,13 @@ function RatingRow({
   return (
     <div className="flex items-center justify-between text-sm">
       <span className="text-text-secondary">{label}</span>
-
-      <span className="font-semibold text-primary">
-        {value !== null ? `${value.toFixed(1)} / 10` : "N/A"}
-      </span>
+      <StarRating value={value} />
     </div>
   );
 }
+
 const QUOTE_TRUNCATE_LENGTH = 220;
+
 function ReviewCard({ review }: { review: Review }) {
   const [expanded, setExpanded] = useState(false);
 
@@ -301,17 +410,26 @@ function ReviewCard({ review }: { review: Review }) {
           <p className="mt-2 text-xs text-text-secondary">{review.date}</p>
         )}
       </div>
-
-      <a
+        
+        <a
+    
         href={review.url}
         target="_blank"
         rel="noopener noreferrer"
         className="text-lg"
         title={`View on ${review.source}`}
       >
-        {review.source === "studentvip" ? 
-          <img width={"20px"} src={"https://encrypted-tbn2.gstatic.com/faviconV2?url=https://studentvip.com.au&client=VFE&size=64&type=FAVICON&fallback_opts=TYPE,SIZE,URL&nfrp=2"}></img> : 
-          <img width={"20px"} src={"https://encrypted-tbn2.gstatic.com/faviconV2?url=https://unilectives.devsoc.app&client=VFE&size=64&type=FAVICON&fallback_opts=TYPE,SIZE,URL&nfrp=2"}></img>}
+        {review.source === "studentvip" ? (
+          <img
+            width="20px"
+            src="https://encrypted-tbn2.gstatic.com/faviconV2?url=https://studentvip.com.au&client=VFE&size=64&type=FAVICON&fallback_opts=TYPE,SIZE,URL&nfrp=2"
+          />
+        ) : (
+          <img
+            width="20px"
+            src="https://encrypted-tbn2.gstatic.com/faviconV2?url=https://unilectives.devsoc.app&client=VFE&size=64&type=FAVICON&fallback_opts=TYPE,SIZE,URL&nfrp=2"
+          />
+        )}
       </a>
     </div>
   );
