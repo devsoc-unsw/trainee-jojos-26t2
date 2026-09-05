@@ -70,13 +70,13 @@ export async function getFilteredPool(history: QuizAnswerHistory): Promise<PoolC
     let matchingCodes: string[] = [];
 
     if (answer.questionType === "fixed_category") {
-  const facultyNames = answer.selectedOptionIds.flatMap(
-    (id) => CATEGORY_TO_FACULTY[id] ?? []
-  );
-  if (facultyNames.length > 0) {
-    const { data } = await supabase.from("courses").select("code").in("faculty", facultyNames);
-    matchingCodes = (data ?? []).map((c) => c.code);
-  }
+      const facultyNames = answer.selectedOptionIds.flatMap(
+        (id) => CATEGORY_TO_FACULTY[id] ?? []
+      );
+      if (facultyNames.length > 0) {
+        const { data } = await supabase.from("courses").select("code").in("faculty", facultyNames);
+        matchingCodes = (data ?? []).map((c) => c.code);
+      }
 
     }
 
@@ -104,19 +104,29 @@ export async function getFilteredPool(history: QuizAnswerHistory): Promise<PoolC
     if (answer.questionType === "numeric_threshold") {
       const question = QUESTION_BANK.find((q) => q.questionId === answer.questionId);
       if (question?.attributeName) {
-        const wantsLower = answer.selectedOptionIds[0] === "below";
-        const thresholdStr = answer.selectedOptionIds[1];
-        const threshold = thresholdStr ? parseFloat(thresholdStr) : 5;
+        const wantsLower = answer.selectedOptionIds[0] === "below"; // "No, I'd prefer easier/lighter"
 
-        const { data: attrs } = await supabase
-          .from("course_attributes")
-          .select("course_code, score")
-          .eq("attribute_name", question.attributeName);
+        if (wantsLower) {
+          // Real constraint: exclude anything above the threshold shown
+          const thresholdStr = answer.selectedOptionIds[1];
+          const threshold = thresholdStr ? parseFloat(thresholdStr) : 5;
 
-        matchingCodes = (attrs ?? [])
-          .filter((a) => (wantsLower ? a.score <= threshold : a.score > threshold))
-          .map((a) => a.course_code);
+          const { data: attrs } = await supabase
+            .from("course_attributes")
+            .select("course_code, score")
+            .eq("attribute_name", question.attributeName);
+
+          matchingCodes = (attrs ?? [])
+            .filter((a) => a.score <= threshold)
+            .map((a) => a.course_code);
+        } else {
+          // "Yes, comfortable with this" — permission, not exclusion.
+          // Don't filter the pool at all on this answer.
+          const { data: allCourses } = await supabase.from("courses").select("code");
+          matchingCodes = (allCourses ?? []).map((c) => c.code);
+        }
       }
+
     }
 
     codes = codes === null ? matchingCodes : codes.filter((c) => matchingCodes.includes(c));
@@ -222,29 +232,29 @@ export async function pickNextQuestion(
   const options =
     best.question.questionType === "numeric_threshold"
       ? [
-          {
-            id: "below",
-            label:
-              best.question.attributeName === "difficulty"
-                ? "No, I'd prefer an easier course"
-                : best.question.attributeName === "workload"
+        {
+          id: "below",
+          label:
+            best.question.attributeName === "difficulty"
+              ? "No, I'd prefer an easier course"
+              : best.question.attributeName === "workload"
                 ? "No, I'd prefer a lighter workload"
                 : "No, I'd prefer less demanding assessments",
-          },
-          {
-            id: "above",
-            label:
-              best.question.attributeName === "difficulty"
-                ? "Yes, I'm comfortable with this difficulty"
-                : best.question.attributeName === "workload"
+        },
+        {
+          id: "above",
+          label:
+            best.question.attributeName === "difficulty"
+              ? "Yes, I'm comfortable with this difficulty"
+              : best.question.attributeName === "workload"
                 ? "Yes, I'm comfortable with this workload"
                 : "Yes, I'm comfortable with these assessments",
-          },
-        ]
+        },
+      ]
       : [
-          { id: "yes", label: "Yes" },
-          { id: "no", label: "No" },
-        ];
+        { id: "yes", label: "Yes" },
+        { id: "no", label: "No" },
+      ];
 
   return { ...best.question, questionText, options };
 }
@@ -312,12 +322,18 @@ export async function scoreFinalPool(
         const thresholdStr = answer.selectedOptionIds[1];
         const threshold = thresholdStr ? parseFloat(thresholdStr) : 5;
 
-        const matched = wantsLower ? courseValue <= threshold : courseValue > threshold;
+        let matched: boolean;
+        if (wantsLower) {
+          matched = courseValue <= threshold; // real constraint, still checked
+        } else {
+          matched = true; // "comfortable with X" never penalizes any course on this axis
+        }
+
         if (matched) score += 1;
 
         explanation.push({
           attribute: question.attributeName,
-          studentPreference: wantsLower ? "low " + question.attributeName : "high " + question.attributeName,
+          studentPreference: wantsLower ? "prefers lower " + question.attributeName : "open to higher " + question.attributeName,
           courseValue,
           contribution: matched
             ? `Matched your preference (${question.attributeName}: ${courseValue.toFixed(1)}/10)`
@@ -398,7 +414,6 @@ export function buildSummary(history: QuizAnswerHistory): string {
     return "Based on your answers, we've matched you with courses that fit your general preferences.";
   }
 
-  return `Based on your interest in ${parts.slice(0, -1).join(", ")}${
-    parts.length > 1 ? ", and " : ""
-  }${parts[parts.length - 1]}, here are your best course matches.`;
+  return `Based on your interest in ${parts.slice(0, -1).join(", ")}${parts.length > 1 ? ", and " : ""
+    }${parts[parts.length - 1]}, here are your best course matches.`;
 }

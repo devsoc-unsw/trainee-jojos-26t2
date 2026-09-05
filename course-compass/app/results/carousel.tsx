@@ -4,8 +4,8 @@
 import { useRouter } from "next/navigation";
 import { useRef, useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { Card } from "@/app/components/courseCard";
 import { RecommendedCourseData } from "@/app/results/recommended_course";
+import { CourseCard } from "../components/courseCard";
 
 interface OtherMatchesCarouselProps {
   courses: RecommendedCourseData[];
@@ -61,7 +61,7 @@ export function OtherMatchesCarousel({ courses, loading }: OtherMatchesCarouselP
         <div className="mt-4 flex flex-nowrap gap-4 overflow-hidden pb-2">
           {[1, 2, 3].map((i) => (
             <div key={i} className="w-72 shrink-0">
-              <Card>
+              <div>
                 <div className="p-4 animate-pulse space-y-2">
                   <div className="h-3 w-16 rounded bg-gray-300/50" />
                   <div className="h-5 w-3/4 rounded bg-gray-300/50" />
@@ -71,7 +71,7 @@ export function OtherMatchesCarousel({ courses, loading }: OtherMatchesCarouselP
                     <div className="h-6 w-20 rounded-full bg-gray-300/40" />
                   </div>
                 </div>
-              </Card>
+              </div>
             </div>
           ))}
         </div>
@@ -117,33 +117,15 @@ export function OtherMatchesCarousel({ courses, loading }: OtherMatchesCarouselP
                 data-card
                 role="button"
                 tabIndex={0}
-                onClick={() => router.push(`/courses/${course.code}`)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    router.push(`/courses/${course.code}`);
-                  }
-                }}
                 className="w-72 shrink-0"
               >
-                <Card>
-                  <div className="p-4 text-left">
-                    <span className="text-xs font-semibold text-text-secondary">
-                      {course.code}
-                    </span>
-                    <h3 className="mt-1 font-bold text-text-primary">{course.name}</h3>
-                    <p className="mt-1 text-sm text-text-secondary">{course.shortSummary}</p>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {course.tags.map((tag) => (
-                        <span
-                          key={tag.label}
-                          className="rounded-full bg-background px-3 py-1 text-xs font-medium text-text-primary"
-                        >
-                          {tag.label}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </Card>
+                <CourseCard 
+                  code={course.code} 
+                  title={course.name} 
+                  description={course.shortSummary} 
+                  tags={course.tags.map((t)=> t.label)} 
+                >
+                </CourseCard>
               </div>
             ))}
           </div>

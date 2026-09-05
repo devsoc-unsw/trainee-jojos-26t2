@@ -10,10 +10,19 @@ import {
 export async function POST(req: NextRequest) {
   const body: QuizAnswerHistory = await req.json();
 
-  const pool = await getFilteredPool(body);
-  const ranked = await scoreFinalPool(pool, body);
+  let answers = [...body.answers];
+  let pool = await getFilteredPool({ answers });
+
+  // If no courses match, progressively drop the most recent (most specific) answers
+  while (pool.length === 0 && answers.length > 1) {
+    answers = answers.slice(0, -1);
+    pool = await getFilteredPool({ answers });
+  }
+
+  const ranked = await scoreFinalPool(pool, { answers: body.answers }); // score against FULL original answers
   const enriched = await buildRecommendedCourses(ranked);
   const summary = buildSummary(body);
+
   return NextResponse.json({
     summary,
     topMatch: enriched[0] ?? null,
