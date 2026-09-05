@@ -1,80 +1,213 @@
 "use client";
 
-import React, { useState } from "react";
+import { useMemo, useState } from "react";
+import { ALLOWED_TAGS } from "@/lib/allowedTags";
 
-function StarRating({ rating, onChange }: { rating: number; onChange: (v: number) => void }) {
-  const [hover, setHover] = useState<number | null>(null);
-  const displayValue = hover !== null ? hover : rating;
+type Faculty = {
+  id: string;
+  label: string;
+};
 
+type Ratings = {
+  workload: number;
+  difficulty: number;
+  assessment: number;
+};
+
+interface FiltersProps {
+  faculties: Faculty[];
+  selectedFaculties: string[];
+  onFacultyChange: (faculty: string) => void;
+
+  selectedTags: string[];
+  onTagChange: (tag: string) => void;
+
+  ratings: Ratings;
+  onRatingChange: (
+    type: keyof Ratings,
+    value: number
+  ) => void;
+}
+
+function RatingFilter({
+  label,
+  value,
+  onChange,
+}: {
+  label: string;
+  value: number;
+  onChange: (value: number) => void;
+}) {
   return (
-    <div 
-      className="relative inline-block text-[18px] leading-none tracking-[2px] select-none" 
-      onMouseLeave={() => setHover(null)}
-    >
-      <div className="text-[#e2e8f0]">★★★★★</div>
-      <div 
-        className="absolute top-0 left-0 whitespace-nowrap overflow-hidden text-[#2d2d44]" 
-        style={{ width: `${(displayValue / 5) * 100}%` }}
-      >
-        ★★★★★
+    <div>
+      <div className="mb-2 flex items-center justify-between">
+        <span className="text-sm font-medium text-[#100c29]">
+          {label}
+        </span>
+
+        <span className="text-xs text-[#44526a]">
+          Max {value * 2}/10
+        </span>
       </div>
-      <div className="absolute top-0 left-0 w-full h-full flex z-10">
-        {[0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5].map((v) => (
-          <div 
-            key={v} 
-            className="flex-1 h-full cursor-pointer" 
-            onMouseEnter={() => setHover(v)} 
-            onClick={() => onChange(v)} 
-          />
+
+      <div className="flex gap-1">
+        {[1, 2, 3, 4, 5].map((star) => (
+          <button
+            key={star}
+            type="button"
+            onClick={() => onChange(star)}
+            className="text-2xl leading-none"
+            aria-label={`Maximum ${star} out of 5`}
+          >
+            {star <= value ? "★" : "☆"}
+          </button>
         ))}
       </div>
     </div>
   );
 }
 
+export default function Filters({
+  faculties,
+  selectedFaculties,
+  onFacultyChange,
+  selectedTags = [],
+  onTagChange,
+  ratings,
+  onRatingChange,
+}: FiltersProps) {
+  const [tagSearch, setTagSearch] = useState("");
 
-export default function Filters() {
-  const [ratings, setRatings] = useState({ workload: 3, difficulty: 3, intensity: 3 });
-  const tags = ["Engineering (CS)", "Science", "Arts & Social", "Business"];
+  const availableTags = useMemo(() => {
+    const search = tagSearch.trim().toLowerCase();
+
+    return ALLOWED_TAGS.filter((tag) => {
+      if (selectedTags.includes(tag)) {
+        return false;
+      }
+
+      if (!search) {
+        return true;
+      }
+
+      return tag.toLowerCase().includes(search);
+    });
+  }, [tagSearch, selectedTags]);
 
   return (
-    <div className="w-[280px] bg-white border-2 border-[#2d2d44] rounded-[12px] p-[25px] font-sans">
-      <div className="flex flex-col">
-        <h3 className="text-[15px] font-[800] text-[#2d2d44] mb-[15px] mt-0">
-            Tags
-        </h3>
-        <div className="flex flex-col gap-[10px]">
-          {tags.map((tag) => (
-            <label key={tag} className="flex items-center gap-[12px] text-[14px] text-[#4a5568] cursor-pointer">
-              <input 
-                type="checkbox" 
-                className="accent-[#2d2d44] w-[17px] h-[17px] cursor-pointer" 
+    <div className="space-y-8">
+      {/* Faculty */}
+      <section>
+        <h2 className="mb-3 text-sm font-semibold text-[#100c29]">
+          Faculty
+        </h2>
+
+        <div className="space-y-2">
+          {faculties.map((faculty) => (
+            <label
+              key={faculty.id}
+              className="flex cursor-pointer items-center gap-3 text-sm text-[#44526a]"
+            >
+              <input
+                type="checkbox"
+                checked={selectedFaculties.includes(
+                  faculty.id
+                )}
+                onChange={() =>
+                  onFacultyChange(faculty.id)
+                }
+                className="h-4 w-4 rounded border-gray-300"
               />
-              <span>{tag}</span>
+
+              <span>{faculty.label}</span>
             </label>
           ))}
         </div>
-      </div>
+      </section>
 
-      <div className="flex flex-col mt-[30px]">
-        <h3 className="text-[15px] font-[800] text-[#2d2d44] mb-[15px] mt-0">
-            Ratings
-        </h3>
-        <div className="flex flex-col gap-[15px]">
-          <div className="flex justify-between items-center text-[14px] text-[#4a5568]">
-            <span>Workload</span>
-            <StarRating rating={ratings.workload} onChange={(v) => setRatings({...ratings, workload: v})} />
+      {/* Tags */}
+      <section>
+        <h2 className="mb-3 text-sm font-semibold text-[#100c29]">
+          Tags
+        </h2>
+
+        <input
+          type="text"
+          value={tagSearch}
+          onChange={(event) =>
+            setTagSearch(event.target.value)
+          }
+          placeholder="Search tags..."
+          className="mb-3 w-full rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm outline-none focus:border-[#404e7c]"
+        />
+
+        {selectedTags.length > 0 && (
+          <div className="mb-3 flex flex-wrap gap-2">
+            {selectedTags.map((tag) => (
+              <button
+                key={tag}
+                type="button"
+                onClick={() => onTagChange(tag)}
+                className="rounded-full bg-[#404e7c] px-3 py-1 text-xs text-white"
+              >
+                {tag} ×
+              </button>
+            ))}
           </div>
-          <div className="flex justify-between items-center text-[14px] text-[#4a5568]">
-            <span>Course Difficulty</span>
-            <StarRating rating={ratings.difficulty} onChange={(v) => setRatings({...ratings, difficulty: v})} />
-          </div>
-          <div className="flex justify-between items-center text-[14px] text-[#4a5568]">
-            <span>Assessment Intensity</span>
-            <StarRating rating={ratings.intensity} onChange={(v) => setRatings({...ratings, intensity: v})} />
-          </div>
+        )}
+
+        <div className="max-h-60 space-y-1 overflow-y-auto">
+          {availableTags.map((tag) => (
+            <button
+              key={tag}
+              type="button"
+              onClick={() => onTagChange(tag)}
+              className="block w-full rounded-md px-2 py-1.5 text-left text-sm text-[#44526a] hover:bg-gray-100"
+            >
+              {tag}
+            </button>
+          ))}
+
+          {availableTags.length === 0 && (
+            <p className="px-2 py-2 text-sm text-[#44526a]">
+              No tags found.
+            </p>
+          )}
         </div>
-      </div>
+      </section>
+
+      {/* Ratings */}
+      <section>
+        <h2 className="mb-4 text-sm font-semibold text-[#100c29]">
+          Ratings
+        </h2>
+
+        <div className="space-y-5">
+          <RatingFilter
+            label="Workload"
+            value={ratings.workload}
+            onChange={(value) =>
+              onRatingChange("workload", value)
+            }
+          />
+
+          <RatingFilter
+            label="Course Difficulty"
+            value={ratings.difficulty}
+            onChange={(value) =>
+              onRatingChange("difficulty", value)
+            }
+          />
+
+          <RatingFilter
+            label="Assessment Intensity"
+            value={ratings.assessment}
+            onChange={(value) =>
+              onRatingChange("assessment", value)
+            }
+          />
+        </div>
+      </section>
     </div>
   );
 }

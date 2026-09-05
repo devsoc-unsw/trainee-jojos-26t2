@@ -1,4 +1,6 @@
 import React from "react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
 interface CourseCardStuff {
   code: string;
@@ -7,20 +9,27 @@ interface CourseCardStuff {
   tags: string[];
 }
 
-export function CourseCard({ code, title, description, tags }: CourseCardStuff) {
+export function CourseCard({
+  code,
+  title,
+  description,
+  tags,
+}: CourseCardStuff) {
   return (
-    <div className="
-      bg-white 
-      border border-[#e2e8f0] 
-      rounded-[16px] 
-      p-6
-      flex flex-col 
-      transition-all duration-200 
-      hover:border-[#2d2d44] 
-      hover:shadow-md
-      aspect-[1.5/1] 
-      w-full
-    ">
+    <div
+      className="
+        bg-white
+        border border-[#e2e8f0]
+        rounded-[16px]
+        p-6
+        flex flex-col
+        transition-all duration-200
+        hover:border-[#2d2d44]
+        hover:shadow-md
+        aspect-[1.5/1]
+        w-full
+      "
+    >
       <span className="text-[12px] font-semibold text-[#94a3b8] uppercase tracking-wide mb-1">
         {code}
       </span>
@@ -33,15 +42,43 @@ export function CourseCard({ code, title, description, tags }: CourseCardStuff) 
         {description}
       </p>
 
-      <div className="mt-auto flex flex-wrap gap-2">
-        {tags.map((tag, index) => (
-          <span 
-            key={index} 
-            className="bg-[#f8fafc] text-[#64748b] text-[11px] py-1 px-3 rounded-md border border-[#e2e8f0] font-medium"
-          >
-            {tag}
-          </span>
-        ))}
+      <div className="mt-auto">
+        <div className="flex flex-wrap gap-2 mb-4">
+          {tags.map((tag, index) => (
+            <span
+              key={index}
+              className="
+                bg-[#f8fafc]
+                text-[#64748b]
+                text-[11px]
+                py-1
+                px-3
+                rounded-md
+                border border-[#e2e8f0]
+                font-medium
+              "
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <Link
+          href={`/courses/${encodeURIComponent(code)}`}
+          className="
+            inline-flex
+            items-center
+            gap-2
+            text-[13px]
+            font-semibold
+            text-[#404e7c]
+            hover:text-[#251F47]
+            transition-colors
+          "
+        >
+          View course
+          <ArrowRight size={15} />
+        </Link>
       </div>
     </div>
   );

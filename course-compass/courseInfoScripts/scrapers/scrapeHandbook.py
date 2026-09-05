@@ -90,8 +90,17 @@ def extract_course_info(data: dict) -> dict:
 
 def run(course, year, build_id):
     data = fetch_course(course, year, build_id)
-    return strip_html(data["pageProps"]["pageContent"]["description"]) 
-# get_build_id()
+    description = strip_html(data["pageProps"]["pageContent"]["description"])
+    url = f"https://www.handbook.unsw.edu.au/undergraduate/courses/{year}/{course}"
+
+    return {
+        "course_code": course.upper(),
+        "description": description,
+        "url": url,
+    }
+
+
 if __name__ == "__main__":
-    data = fetch_course("COMP3331")
-    print( strip_html(data["pageProps"]["pageContent"]["description"]))
+    build_id = get_build_id()
+    result = run("COMP3331", 2026, build_id)
+    print(result)
