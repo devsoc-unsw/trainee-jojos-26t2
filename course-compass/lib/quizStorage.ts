@@ -17,5 +17,11 @@ export const quizStorage = {
     sessionStorage.setItem(KEY, JSON.stringify(updated));
     return updated;
   },
+  removeLast: () => {
+    const current = quizStorage.get();
+    const updated = current.slice(0, -1);
+    sessionStorage.setItem(KEY, JSON.stringify(updated));
+    return updated;
+  },
   clear: () => sessionStorage.removeItem(KEY),
 };
