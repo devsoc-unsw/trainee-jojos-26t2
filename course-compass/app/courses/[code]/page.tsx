@@ -281,7 +281,7 @@ export default function Course() {
 
         {reviews.length > 0 ? (
           <div className="mt-4 flex flex-col gap-4">
-            {reviews.map((review) => (
+            {reviews.filter((r) => r.quote != "").map((review) => (
               <ReviewCard key={review.reviewId} review={review} />
             ))}
           </div>
