@@ -4,7 +4,7 @@ import { BouncyLogo } from "./BouncyLogo";
 
 export function Footer() {
   return (
-    <footer className="relative h-80 w-full overflow-hidden bg-[var(--primary)]">
+    <footer className="relative h-40 w-full overflow-hidden bg-[var(--primary)]">
       {/* Green top border */}
       <div className="absolute left-0 top-0 z-10 h-3 w-full bg-[var(--green)]" />
 
@@ -21,8 +21,9 @@ export function Footer() {
         </span>
       </div>
 
-      {/* Bouncy logo has the entire footer as its playground */}
+      {/* Bouncy logo */}
       <BouncyLogo />
+      <div className="w-full h-4 bg-[var(--secondary)] absolute bottom-0"></div>
     </footer>
   );
 }

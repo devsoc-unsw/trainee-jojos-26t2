@@ -9,17 +9,17 @@ import {
 import Image from "next/image";
 import icon from "@/public/owls/owl_icon.svg";
 
-const BALL_SIZE = 48;
-const GRAVITY = 0.6;
-const WALL_DAMPING = 0.72;
-const AIR_FRICTION = 0.998;
+const BALL_SIZE = 50;
+const GRAVITY = 0.08;
+const WALL_DAMPING = 0.71;
+const AIR_FRICTION = 0.991;
 const REST_THRESHOLD = 0.3;
 
 export function BouncyLogo() {
   const ballRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLElement | null>(null);
 
-  const pos = useRef({ x: 40, y: 40 });
+  const pos = useRef({ x: 1000, y: 1000 });
   const vel = useRef({ x: 2, y: 0 });
 
   const dragging = useRef(false);
@@ -106,6 +106,26 @@ export function BouncyLogo() {
 
     rafId.current = requestAnimationFrame(tick);
   }, [applyTransform, getBounds]);
+
+  useEffect(() => {
+    containerRef.current = ballRef.current?.parentElement ?? null;
+
+    const { width, height } = getBounds();
+    pos.current = {
+      x: width / 2 - BALL_SIZE / 2,
+      y: height - BALL_SIZE,
+    };
+
+    applyTransform();
+
+    rafId.current = requestAnimationFrame(tick);
+
+    return () => {
+      if (rafId.current !== null) {
+        cancelAnimationFrame(rafId.current);
+      }
+    };
+  }, [applyTransform, tick, getBounds]);
 
   useEffect(() => {
     // Find the footer element.
