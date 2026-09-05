@@ -2,23 +2,30 @@ import { NextRequest, NextResponse } from "next/server";
 import {
   getFilteredPool,
   scoreFinalPool,
+  buildRecommendedCourses,
+  buildSummary,
   QuizAnswerHistory,
 } from "@/lib/quizEngine";
 
-// POST /api/quiz/results
-// Body: { answers: QuizAnswer[] }
 export async function POST(req: NextRequest) {
   const body: QuizAnswerHistory = await req.json();
 
-  // Recompute the pool server-side — never trust a client-sent pool.
-  const pool = await getFilteredPool(body);
-  const ranked = await scoreFinalPool(pool, body);
+  let answers = [...body.answers];
+  let pool = await getFilteredPool({ answers });
 
-  // TODO: once scoreFinalPool is implemented, build the real response:
-  // summary, topMatch (ranked[0]) with explanation, otherMatches (ranked[1:])
+  // If no courses match, progressively drop the most recent (most specific) answers
+  while (pool.length === 0 && answers.length > 1) {
+    answers = answers.slice(0, -1);
+    pool = await getFilteredPool({ answers });
+  }
+
+  const ranked = await scoreFinalPool(pool, { answers: body.answers }); // score against FULL original answers
+  const enriched = await buildRecommendedCourses(ranked);
+  const summary = buildSummary(body);
+
   return NextResponse.json({
-    summary: "",
-    topMatch: ranked[0] ?? null,
-    otherMatches: ranked.slice(1),
+    summary,
+    topMatch: enriched[0] ?? null,
+    otherMatches: enriched.slice(1),
   });
 }
