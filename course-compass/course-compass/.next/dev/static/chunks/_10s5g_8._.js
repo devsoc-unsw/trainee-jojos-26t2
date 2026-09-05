@@ -64,8 +64,15 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navi
 var __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$quizStorage$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/lib/quizStorage.ts [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Buttons$2f$primary$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/components/Buttons/primary.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$app$2f$components$2f$Buttons$2f$secondary$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/app/components/Buttons/secondary.tsx [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$owls$2f$owl$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$owls$2f$owl$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/public/owls/owl.png.mjs { IMAGE => "[project]/public/owls/owl.png (static in ecmascript, tag client)" } [app-client] (structured image object with data url, ecmascript)');
+var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$owls$2f$owl$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$owls$2f$owl$2e$svg__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/public/owls/owl.svg.mjs { IMAGE => "[project]/public/owls/owl.svg (static in ecmascript, tag client)" } [app-client] (structured image object with data url, ecmascript)');
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$arts$2d$humanities$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$question$2d$icons$2f$arts$2d$humanities$2e$svg__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/public/question-icons/arts-humanities.svg.mjs { IMAGE => "[project]/public/question-icons/arts-humanities.svg (static in ecmascript, tag client)" } [app-client] (structured image object with data url, ecmascript)');
+var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$business$2d$economics$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$question$2d$icons$2f$business$2d$economics$2e$svg__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/public/question-icons/business-economics.svg.mjs { IMAGE => "[project]/public/question-icons/business-economics.svg (static in ecmascript, tag client)" } [app-client] (structured image object with data url, ecmascript)');
+var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$engineering$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$question$2d$icons$2f$engineering$2e$svg__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/public/question-icons/engineering.svg.mjs { IMAGE => "[project]/public/question-icons/engineering.svg (static in ecmascript, tag client)" } [app-client] (structured image object with data url, ecmascript)');
+var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$health$2d$medicine$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$question$2d$icons$2f$health$2d$medicine$2e$svg__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/public/question-icons/health-medicine.svg.mjs { IMAGE => "[project]/public/question-icons/health-medicine.svg (static in ecmascript, tag client)" } [app-client] (structured image object with data url, ecmascript)');
+var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$science$2d$technology$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$question$2d$icons$2f$science$2d$technology$2e$svg__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/public/question-icons/science-technology.svg.mjs { IMAGE => "[project]/public/question-icons/science-technology.svg (static in ecmascript, tag client)" } [app-client] (structured image object with data url, ecmascript)');
+var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$social$2d$sciences$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$question$2d$icons$2f$social$2d$sciences$2e$svg__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/public/question-icons/social-sciences.svg.mjs { IMAGE => "[project]/public/question-icons/social-sciences.svg (static in ecmascript, tag client)" } [app-client] (structured image object with data url, ecmascript)');
+var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$check$2d$selected$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$question$2d$icons$2f$check$2d$selected$2e$svg__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__ = __turbopack_context__.i('[project]/public/question-icons/check-selected.svg.mjs { IMAGE => "[project]/public/question-icons/check-selected.svg (static in ecmascript, tag client)" } [app-client] (structured image object with data url, ecmascript)');
 ;
 var _s = __turbopack_context__.k.signature();
 // app/quiz/page.tsx
@@ -77,6 +84,21 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
+;
+;
+;
+;
+;
+;
+;
+const OPTION_ICONS = {
+    "arts-design-architecture": __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$arts$2d$humanities$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$question$2d$icons$2f$arts$2d$humanities$2e$svg__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
+    business: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$business$2d$economics$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$question$2d$icons$2f$business$2d$economics$2e$svg__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
+    engineering: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$engineering$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$question$2d$icons$2f$engineering$2e$svg__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
+    "law-justice": __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$social$2d$sciences$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$question$2d$icons$2f$social$2d$sciences$2e$svg__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
+    "medicine-health": __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$health$2d$medicine$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$question$2d$icons$2f$health$2d$medicine$2e$svg__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
+    science: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$science$2d$technology$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$question$2d$icons$2f$science$2d$technology$2e$svg__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"]
+};
 function QuizPage() {
     _s();
     const router = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"])();
@@ -172,6 +194,7 @@ function QuizPage() {
     }
     const showFinishInstead = (question?.remainingCount ?? Infinity) < 5;
     const canGoBack = __TURBOPACK__imported__module__$5b$project$5d2f$lib$2f$quizStorage$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["quizStorage"].get().length > 0 && !loading;
+    const showIcons = !!question?.options?.length && question.options.every((opt)=>OPTION_ICONS[opt.id]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "mx-auto flex max-w-3xl flex-col items-center px-6 py-16",
         children: [
@@ -188,12 +211,12 @@ function QuizPage() {
                                     children: "We've narrowed it down. Ready to see your matches?"
                                 }, void 0, false, {
                                     fileName: "[project]/app/quiz/page.tsx",
-                                    lineNumber: 129,
+                                    lineNumber: 150,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/quiz/page.tsx",
-                                lineNumber: 128,
+                                lineNumber: 149,
                                 columnNumber: 13
                             }, this) : loading || !question ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "animate-pulse space-y-2",
@@ -202,20 +225,20 @@ function QuizPage() {
                                         className: "h-5 w-3/4 rounded bg-gray-400/40"
                                     }, void 0, false, {
                                         fileName: "[project]/app/quiz/page.tsx",
-                                        lineNumber: 135,
+                                        lineNumber: 156,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "h-5 w-1/2 rounded bg-gray-400/40"
                                     }, void 0, false, {
                                         fileName: "[project]/app/quiz/page.tsx",
-                                        lineNumber: 136,
+                                        lineNumber: 157,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/quiz/page.tsx",
-                                lineNumber: 134,
+                                lineNumber: 155,
                                 columnNumber: 13
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                 children: [
@@ -224,7 +247,7 @@ function QuizPage() {
                                         children: question.questionText
                                     }, void 0, false, {
                                         fileName: "[project]/app/quiz/page.tsx",
-                                        lineNumber: 140,
+                                        lineNumber: 161,
                                         columnNumber: 15
                                     }, this),
                                     question.subtitle && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -232,48 +255,48 @@ function QuizPage() {
                                         children: question.subtitle
                                     }, void 0, false, {
                                         fileName: "[project]/app/quiz/page.tsx",
-                                        lineNumber: 144,
+                                        lineNumber: 165,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/app/quiz/page.tsx",
-                                lineNumber: 139,
+                                lineNumber: 160,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "\n              hidden sm:block\n              absolute\n              top-1/2\n              -right-8\n              -translate-y-1/2\n              w-0\n              h-0\n              border-t-[40px]\n              border-t-transparent\n              border-b-[40px]\n              border-b-transparent\n              border-l-[40px]\n              border-l-[#d9d9d9]\n            "
                             }, void 0, false, {
                                 fileName: "[project]/app/quiz/page.tsx",
-                                lineNumber: 152,
+                                lineNumber: 173,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/quiz/page.tsx",
-                        lineNumber: 126,
+                        lineNumber: 147,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "hidden h-28 w-28 flex-shrink-0 sm:block",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                            src: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$owls$2f$owl$2e$png$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$owls$2f$owl$2e$png__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
+                            src: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$owls$2f$owl$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$owls$2f$owl$2e$svg__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
                             alt: "Owl",
                             className: "h-full w-full object-contain"
                         }, void 0, false, {
                             fileName: "[project]/app/quiz/page.tsx",
-                            lineNumber: 172,
+                            lineNumber: 193,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/quiz/page.tsx",
-                        lineNumber: 171,
+                        lineNumber: 192,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/quiz/page.tsx",
-                lineNumber: 125,
+                lineNumber: 146,
                 columnNumber: 7
             }, this),
             isDone ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -290,16 +313,16 @@ function QuizPage() {
                             children: "Back"
                         }, void 0, false, {
                             fileName: "[project]/app/quiz/page.tsx",
-                            lineNumber: 191,
+                            lineNumber: 212,
                             columnNumber: 15
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/quiz/page.tsx",
-                        lineNumber: 183,
+                        lineNumber: 204,
                         columnNumber: 13
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {}, void 0, false, {
                         fileName: "[project]/app/quiz/page.tsx",
-                        lineNumber: 194,
+                        lineNumber: 215,
                         columnNumber: 13
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -313,53 +336,96 @@ function QuizPage() {
                             children: "Finish"
                         }, void 0, false, {
                             fileName: "[project]/app/quiz/page.tsx",
-                            lineNumber: 205,
+                            lineNumber: 226,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/quiz/page.tsx",
-                        lineNumber: 197,
+                        lineNumber: 218,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/quiz/page.tsx",
-                lineNumber: 181,
+                lineNumber: 202,
                 columnNumber: 9
             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "mt-12 w-full rounded-2xl bg-white p-8 shadow-sm",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "mx-auto flex max-w-[620px] flex-wrap justify-center gap-5",
+                            className: "mx-auto flex max-w-[640px] flex-wrap justify-center gap-5",
                             children: (question?.options ?? []).map((opt)=>{
                                 const isSelected = selected.includes(opt.id);
+                                const icon = showIcons ? OPTION_ICONS[opt.id] : undefined;
                                 return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                     onClick: ()=>toggleOption(opt.id),
                                     disabled: loading,
-                                    className: `w-[192px] rounded-xl border p-5 text-left transition disabled:opacity-40 ${isSelected ? "border-primary bg-primary/5" : "border-gray-200 bg-white hover:border-primary/40"}`,
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-base font-semibold text-text-primary",
-                                        children: opt.label
-                                    }, void 0, false, {
-                                        fileName: "[project]/app/quiz/page.tsx",
-                                        lineNumber: 226,
-                                        columnNumber: 21
-                                    }, this)
-                                }, opt.id, false, {
+                                    className: `relative flex w-[192px] flex-col items-start justify-start rounded-xl border p-5 text-left transition disabled:opacity-40 ${isSelected ? "border-primary bg-[#eef1f8]" : "border-gray-200 bg-white hover:border-primary/40"}`,
+                                    children: [
+                                        isSelected && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "absolute top-3 right-3 h-5 w-5",
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                src: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$check$2d$selected$2e$svg$2e$mjs__$7b$__IMAGE__$3d3e$__$225b$project$5d2f$public$2f$question$2d$icons$2f$check$2d$selected$2e$svg__$28$static__in__ecmascript$2c$__tag__client$2922$__$7d$__$5b$app$2d$client$5d$__$28$structured__image__object__with__data__url$2c$__ecmascript$29$__["default"],
+                                                alt: "",
+                                                className: "h-full w-full"
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/quiz/page.tsx",
+                                                lineNumber: 252,
+                                                columnNumber: 25
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/quiz/page.tsx",
+                                            lineNumber: 251,
+                                            columnNumber: 23
+                                        }, this),
+                                        showIcons && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: `mb-3 flex h-12 w-12 items-center justify-center rounded-full transition ${isSelected ? "bg-primary" : "bg-gray-100"}`,
+                                            children: icon && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "relative h-6 w-6",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                    src: icon,
+                                                    alt: "",
+                                                    fill: true,
+                                                    className: `object-contain transition ${isSelected ? "brightness-0 invert" : ""}`
+                                                }, void 0, false, {
+                                                    fileName: "[project]/app/quiz/page.tsx",
+                                                    lineNumber: 269,
+                                                    columnNumber: 29
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/app/quiz/page.tsx",
+                                                lineNumber: 268,
+                                                columnNumber: 27
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/quiz/page.tsx",
+                                            lineNumber: 262,
+                                            columnNumber: 23
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "text-base font-semibold text-text-primary",
+                                            children: opt.label
+                                        }, void 0, false, {
+                                            fileName: "[project]/app/quiz/page.tsx",
+                                            lineNumber: 282,
+                                            columnNumber: 21
+                                        }, this)
+                                    ]
+                                }, opt.id, true, {
                                     fileName: "[project]/app/quiz/page.tsx",
-                                    lineNumber: 216,
+                                    lineNumber: 239,
                                     columnNumber: 19
                                 }, this);
                             })
                         }, void 0, false, {
                             fileName: "[project]/app/quiz/page.tsx",
-                            lineNumber: 212,
+                            lineNumber: 233,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/app/quiz/page.tsx",
-                        lineNumber: 211,
+                        lineNumber: 232,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -376,16 +442,16 @@ function QuizPage() {
                                     children: "Back"
                                 }, void 0, false, {
                                     fileName: "[project]/app/quiz/page.tsx",
-                                    lineNumber: 246,
+                                    lineNumber: 302,
                                     columnNumber: 17
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/quiz/page.tsx",
-                                lineNumber: 238,
+                                lineNumber: 294,
                                 columnNumber: 15
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {}, void 0, false, {
                                 fileName: "[project]/app/quiz/page.tsx",
-                                lineNumber: 249,
+                                lineNumber: 305,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -406,30 +472,30 @@ function QuizPage() {
                                     children: loading ? "Loading..." : showFinishInstead ? "Finish" : "Next Question"
                                 }, void 0, false, {
                                     fileName: "[project]/app/quiz/page.tsx",
-                                    lineNumber: 274,
+                                    lineNumber: 330,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/app/quiz/page.tsx",
-                                lineNumber: 252,
+                                lineNumber: 308,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/app/quiz/page.tsx",
-                        lineNumber: 236,
+                        lineNumber: 292,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/quiz/page.tsx",
-                lineNumber: 209,
+                lineNumber: 230,
                 columnNumber: 9
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/quiz/page.tsx",
-        lineNumber: 123,
+        lineNumber: 144,
         columnNumber: 5
     }, this);
 }
@@ -480,25 +546,185 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }
 }),
-"[project]/public/owls/owl.png (static in ecmascript, tag client)", ((__turbopack_context__) => {
+"[project]/public/owls/owl.svg (static in ecmascript, tag client)", ((__turbopack_context__) => {
 
-__turbopack_context__.q("/_next/static/media/owl.0m7_esye9iuf7.png");}),
-"[project]/public/owls/owl.png.mjs { IMAGE => \"[project]/public/owls/owl.png (static in ecmascript, tag client)\" } [app-client] (structured image object with data url, ecmascript)", ((__turbopack_context__) => {
+__turbopack_context__.q("/_next/static/media/owl.0gv_v69v_tcrs.svg");}),
+"[project]/public/owls/owl.svg.mjs { IMAGE => \"[project]/public/owls/owl.svg (static in ecmascript, tag client)\" } [app-client] (structured image object with data url, ecmascript)", ((__turbopack_context__) => {
 "use strict";
 
 __turbopack_context__.s([
     "default",
     ()=>__TURBOPACK__default__export__
 ]);
-var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$owls$2f$owl$2e$png__$28$static__in__ecmascript$2c$__tag__client$29$__ = __turbopack_context__.i("[project]/public/owls/owl.png (static in ecmascript, tag client)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$owls$2f$owl$2e$svg__$28$static__in__ecmascript$2c$__tag__client$29$__ = __turbopack_context__.i("[project]/public/owls/owl.svg (static in ecmascript, tag client)");
 ;
 const __TURBOPACK__default__export__ = {
-    src: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$owls$2f$owl$2e$png__$28$static__in__ecmascript$2c$__tag__client$29$__["default"],
-    width: 8200,
-    height: 10000,
-    blurWidth: 7,
-    blurHeight: 8,
-    blurDataURL: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAICAYAAAA1BOUGAAAAmUlEQVR42o2JPQuCUBhG3/QaQaGgIAYOtTcL0RIEDW1FQy3R5+DU1ie1tgSNNpV/wd2fJAiuDlefwYujZzkcDlFOTZYaatec26OeB6OpQO2YM+e0jPrnFYfRYrYMY7C5PuPd/sjXl0eMFrOp6UP3/U1e/x+H0WJqun1Y3D7pPQg5jBZTkpnlTKbeeOv6MJrK1BXWVhizYKpCBk+PJ9oVNIOGAAAAAElFTkSuQmCC"
+    src: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$owls$2f$owl$2e$svg__$28$static__in__ecmascript$2c$__tag__client$29$__["default"],
+    width: 41,
+    height: 50,
+    blurWidth: 0,
+    blurHeight: 0
+};
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/public/question-icons/arts-humanities.svg (static in ecmascript, tag client)", ((__turbopack_context__) => {
+
+__turbopack_context__.q("/_next/static/media/arts-humanities.0dcb4a5_8e2gq.svg");}),
+"[project]/public/question-icons/arts-humanities.svg.mjs { IMAGE => \"[project]/public/question-icons/arts-humanities.svg (static in ecmascript, tag client)\" } [app-client] (structured image object with data url, ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$arts$2d$humanities$2e$svg__$28$static__in__ecmascript$2c$__tag__client$29$__ = __turbopack_context__.i("[project]/public/question-icons/arts-humanities.svg (static in ecmascript, tag client)");
+;
+const __TURBOPACK__default__export__ = {
+    src: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$arts$2d$humanities$2e$svg__$28$static__in__ecmascript$2c$__tag__client$29$__["default"],
+    width: 24,
+    height: 24,
+    blurWidth: 0,
+    blurHeight: 0
+};
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/public/question-icons/business-economics.svg (static in ecmascript, tag client)", ((__turbopack_context__) => {
+
+__turbopack_context__.q("/_next/static/media/business-economics.1l6b0heg9ts70.svg");}),
+"[project]/public/question-icons/business-economics.svg.mjs { IMAGE => \"[project]/public/question-icons/business-economics.svg (static in ecmascript, tag client)\" } [app-client] (structured image object with data url, ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$business$2d$economics$2e$svg__$28$static__in__ecmascript$2c$__tag__client$29$__ = __turbopack_context__.i("[project]/public/question-icons/business-economics.svg (static in ecmascript, tag client)");
+;
+const __TURBOPACK__default__export__ = {
+    src: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$business$2d$economics$2e$svg__$28$static__in__ecmascript$2c$__tag__client$29$__["default"],
+    width: 24,
+    height: 24,
+    blurWidth: 0,
+    blurHeight: 0
+};
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/public/question-icons/check-selected.svg (static in ecmascript, tag client)", ((__turbopack_context__) => {
+
+__turbopack_context__.q("/_next/static/media/check-selected.3rd7-a6p7a4px.svg");}),
+"[project]/public/question-icons/check-selected.svg.mjs { IMAGE => \"[project]/public/question-icons/check-selected.svg (static in ecmascript, tag client)\" } [app-client] (structured image object with data url, ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$check$2d$selected$2e$svg__$28$static__in__ecmascript$2c$__tag__client$29$__ = __turbopack_context__.i("[project]/public/question-icons/check-selected.svg (static in ecmascript, tag client)");
+;
+const __TURBOPACK__default__export__ = {
+    src: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$check$2d$selected$2e$svg__$28$static__in__ecmascript$2c$__tag__client$29$__["default"],
+    width: 24,
+    height: 24,
+    blurWidth: 0,
+    blurHeight: 0
+};
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/public/question-icons/engineering.svg (static in ecmascript, tag client)", ((__turbopack_context__) => {
+
+__turbopack_context__.q("/_next/static/media/engineering.1outdvevzw_rw.svg");}),
+"[project]/public/question-icons/engineering.svg.mjs { IMAGE => \"[project]/public/question-icons/engineering.svg (static in ecmascript, tag client)\" } [app-client] (structured image object with data url, ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$engineering$2e$svg__$28$static__in__ecmascript$2c$__tag__client$29$__ = __turbopack_context__.i("[project]/public/question-icons/engineering.svg (static in ecmascript, tag client)");
+;
+const __TURBOPACK__default__export__ = {
+    src: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$engineering$2e$svg__$28$static__in__ecmascript$2c$__tag__client$29$__["default"],
+    width: 24,
+    height: 24,
+    blurWidth: 0,
+    blurHeight: 0
+};
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/public/question-icons/health-medicine.svg (static in ecmascript, tag client)", ((__turbopack_context__) => {
+
+__turbopack_context__.q("/_next/static/media/health-medicine.2027q152r5w8x.svg");}),
+"[project]/public/question-icons/health-medicine.svg.mjs { IMAGE => \"[project]/public/question-icons/health-medicine.svg (static in ecmascript, tag client)\" } [app-client] (structured image object with data url, ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$health$2d$medicine$2e$svg__$28$static__in__ecmascript$2c$__tag__client$29$__ = __turbopack_context__.i("[project]/public/question-icons/health-medicine.svg (static in ecmascript, tag client)");
+;
+const __TURBOPACK__default__export__ = {
+    src: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$health$2d$medicine$2e$svg__$28$static__in__ecmascript$2c$__tag__client$29$__["default"],
+    width: 24,
+    height: 24,
+    blurWidth: 0,
+    blurHeight: 0
+};
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/public/question-icons/science-technology.svg (static in ecmascript, tag client)", ((__turbopack_context__) => {
+
+__turbopack_context__.q("/_next/static/media/science-technology.4599wxtnnc5d4.svg");}),
+"[project]/public/question-icons/science-technology.svg.mjs { IMAGE => \"[project]/public/question-icons/science-technology.svg (static in ecmascript, tag client)\" } [app-client] (structured image object with data url, ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$science$2d$technology$2e$svg__$28$static__in__ecmascript$2c$__tag__client$29$__ = __turbopack_context__.i("[project]/public/question-icons/science-technology.svg (static in ecmascript, tag client)");
+;
+const __TURBOPACK__default__export__ = {
+    src: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$science$2d$technology$2e$svg__$28$static__in__ecmascript$2c$__tag__client$29$__["default"],
+    width: 24,
+    height: 24,
+    blurWidth: 0,
+    blurHeight: 0
+};
+if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
+    __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
+}
+}),
+"[project]/public/question-icons/social-sciences.svg (static in ecmascript, tag client)", ((__turbopack_context__) => {
+
+__turbopack_context__.q("/_next/static/media/social-sciences.38dweajxshnkt.svg");}),
+"[project]/public/question-icons/social-sciences.svg.mjs { IMAGE => \"[project]/public/question-icons/social-sciences.svg (static in ecmascript, tag client)\" } [app-client] (structured image object with data url, ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>__TURBOPACK__default__export__
+]);
+var __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$social$2d$sciences$2e$svg__$28$static__in__ecmascript$2c$__tag__client$29$__ = __turbopack_context__.i("[project]/public/question-icons/social-sciences.svg (static in ecmascript, tag client)");
+;
+const __TURBOPACK__default__export__ = {
+    src: __TURBOPACK__imported__module__$5b$project$5d2f$public$2f$question$2d$icons$2f$social$2d$sciences$2e$svg__$28$static__in__ecmascript$2c$__tag__client$29$__["default"],
+    width: 24,
+    height: 24,
+    blurWidth: 0,
+    blurHeight: 0
 };
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
@@ -506,4 +732,4 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 }),
 ]);
 
-//# sourceMappingURL=_09pf0kj._.js.map
+//# sourceMappingURL=_10s5g_8._.js.map

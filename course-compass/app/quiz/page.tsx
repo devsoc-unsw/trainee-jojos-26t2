@@ -6,8 +6,25 @@ import { useRouter } from "next/navigation";
 import { quizStorage, StoredAnswer } from "@/lib/quizStorage";
 import { PrimaryButton } from "../components/Buttons/primary";
 import { SecondaryButton } from "../components/Buttons/secondary";
-import owlAsk from "@/public/owls/owl.png";
+import owlAsk from "@/public/owls/owl.svg";
 import Image from "next/image";
+
+import artsHumanitiesIcon from "@/public/question-icons/arts-humanities.svg";
+import businessEconomicsIcon from "@/public/question-icons/business-economics.svg";
+import engineeringIcon from "@/public/question-icons/engineering.svg";
+import healthMedicineIcon from "@/public/question-icons/health-medicine.svg";
+import scienceTechnologyIcon from "@/public/question-icons/science-technology.svg";
+import socialSciencesIcon from "@/public/question-icons/social-sciences.svg";
+import checkSelectedIcon from "@/public/question-icons/check-selected.svg";
+
+const OPTION_ICONS: Record<string, typeof artsHumanitiesIcon> = {
+  "arts-design-architecture": artsHumanitiesIcon,
+  business: businessEconomicsIcon,
+  engineering: engineeringIcon,
+  "law-justice": socialSciencesIcon,
+  "medicine-health": healthMedicineIcon,
+  science: scienceTechnologyIcon,
+};
 
 interface QuizOption {
   id: string;
@@ -119,6 +136,10 @@ export default function QuizPage() {
   const showFinishInstead = (question?.remainingCount ?? Infinity) < 5;
   const canGoBack = quizStorage.get().length > 0 && !loading;
 
+  const showIcons =
+    !!question?.options?.length &&
+    question.options.every((opt) => OPTION_ICONS[opt.id]);
+
   return (
     <div className="mx-auto flex max-w-3xl flex-col items-center px-6 py-16">
       {/* Speech bubble + owl */}
@@ -178,7 +199,22 @@ export default function QuizPage() {
       </div>
 
       {isDone ? (
-        <div className="mt-12">
+        <div className="mt-12 flex w-full items-center justify-between py-4">
+          {canGoBack ? (
+            <div
+              role="button"
+              tabIndex={0}
+              onClick={handleBack}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") handleBack();
+              }}
+            >
+              <SecondaryButton>Back</SecondaryButton>
+            </div>
+          ) : (
+            <span />
+          )}
+
           <div
             role="button"
             tabIndex={0}
@@ -194,20 +230,55 @@ export default function QuizPage() {
         <>
           {/* Options card */}
           <div className="mt-12 w-full rounded-2xl bg-white p-8 shadow-sm">
-            <div className="mx-auto flex max-w-[620px] flex-wrap justify-center gap-5">
+            <div className="mx-auto flex max-w-[640px] flex-wrap justify-center gap-5">
               {(question?.options ?? []).map((opt) => {
                 const isSelected = selected.includes(opt.id);
+                const icon = showIcons ? OPTION_ICONS[opt.id] : undefined;
+
                 return (
                   <button
                     key={opt.id}
                     onClick={() => toggleOption(opt.id)}
                     disabled={loading}
-                    className={`w-[192px] rounded-xl border p-5 text-left transition disabled:opacity-40 ${
+                    className={`relative flex w-[192px] flex-col items-start justify-start rounded-xl border p-5 text-left transition disabled:opacity-40 ${
                       isSelected
-                        ? "border-primary bg-primary/5"
+                        ? "border-primary bg-[#eef1f8]"
                         : "border-gray-200 bg-white hover:border-primary/40"
                     }`}
                   >
+                    {/* Checkmark badge, tucked into the corner */}
+                    {isSelected && (
+                      <div className="absolute top-3 right-3 h-5 w-5">
+                        <Image
+                          src={checkSelectedIcon}
+                          alt=""
+                          className="h-full w-full"
+                        />
+                      </div>
+                    )}
+
+                    {/* Icon circle */}
+                    {showIcons && (
+                      <div
+                        className={`mb-3 flex h-12 w-12 items-center justify-center rounded-full transition ${
+                          isSelected ? "bg-primary" : "bg-gray-100"
+                        }`}
+                      >
+                        {icon && (
+                          <div className="relative h-6 w-6">
+                            <Image
+                              src={icon}
+                              alt=""
+                              fill
+                              className={`object-contain transition ${
+                                isSelected ? "brightness-0 invert" : ""
+                              }`}
+                            />
+                          </div>
+                        )}
+                      </div>
+                    )}
+
                     <span className="text-base font-semibold text-text-primary">
                       {opt.label}
                     </span>
