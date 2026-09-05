@@ -32,7 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >      
       <body className="min-h-full flex flex-col">
       <NavBar/>
-      <div className="flex justify-center">
+      <div className="flex justify-center overflow-hidden min-h-[88vh]">
         <div className="max-w-[65rem] w-full">
           {children}
         </div>
